@@ -120,11 +120,18 @@ func SetTitle()
 		call setline(1, "/*************************************************************************") 
 		call append(line("."), "	> File Name: ".expand("%")) 
 		call append(line(".")+1, "	> Author: sijiewang") 
+<<<<<<< HEAD
 		call append(line(".")+2, "	> Mail: lnmcc@hotmail.com ") 
 		call append(line(".")+3, "	> Web: lnmcc.net ") 
 		call append(line(".")+4, "	> Created Time: ".strftime("%c")) 
 		call append(line(".")+5, " ************************************************************************/") 
 		call append(line(".")+6, "")
+=======
+		call append(line(".")+2, "	> Mail: sijiewang@danoonetworks.com ") 
+		call append(line(".")+3, "	> Created Time: ".strftime("%c")) 
+		call append(line(".")+4, " ************************************************************************/") 
+		call append(line(".")+5, "")
+>>>>>>> a0a5a3a1a355caa1341b309e64f09b7bc71cc0d6
 	endif
 
 	"新建文件后，自动定位到文件末尾
