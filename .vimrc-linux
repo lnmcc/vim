@@ -50,8 +50,6 @@ set laststatus=2    " 启动显示状态行(1),总是显示状态行(2)
 "set foldenable      " 允许折叠  
 ""set foldmethod=manual   " 手动折叠  
 set nocompatible  "去掉讨厌的有关vi一致性模式，避免以前版本的一些bug和局限  
-set encoding=utf-8
-set fileencoding=utf-8
 " 自动缩进
 set autoindent
 set cindent
@@ -115,14 +113,13 @@ func SetTitle()
 		call append(line(".")+1, "") 
 	else 
 		call setline(1, "/* ************************************************************************") 
-		call append(line("."),   "  > File Name: ".expand("%")) 
+		call append(line("."), "	> File Name: ".expand("%")) 
 		call append(line(".")+1, "	> Author: lnmcc") 
 		call append(line(".")+2, "	> Mail: lnmcc@hotmail.com ") 
-		call append(line(".")+3, "	> Blog: lnmcc.net ") 
+		call append(line(".")+3, "	> Web: lnmcc.net ") 
 		call append(line(".")+4, "	> Created Time: ".strftime("%c")) 
 		call append(line(".")+5, " *********************************************************************** */") 
 		call append(line(".")+6, "")
-
 	endif
 
 	"新建文件后，自动定位到文件末尾
