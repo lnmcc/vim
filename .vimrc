@@ -50,11 +50,8 @@ set laststatus=2    " 启动显示状态行(1),总是显示状态行(2)
 "set foldenable      " 允许折叠  
 ""set foldmethod=manual   " 手动折叠  
 set nocompatible  "去掉讨厌的有关vi一致性模式，避免以前版本的一些bug和局限  
-" 显示中文帮助
-if version >= 603
-	set helplang=cn
-	set encoding=utf-8
-endif
+set encoding=utf-8
+set fileencoding=utf-8
 " 自动缩进
 set autoindent
 set cindent
@@ -117,21 +114,15 @@ func SetTitle()
         call append(line("."),"# coding=utf-8")
 		call append(line(".")+1, "") 
 	else 
-		call setline(1, "/*************************************************************************") 
-		call append(line("."), "	> File Name: ".expand("%")) 
-		call append(line(".")+1, "	> Author: sijiewang") 
-<<<<<<< HEAD
+		call setline(1, "/* ************************************************************************") 
+		call append(line("."),   "  > File Name: ".expand("%")) 
+		call append(line(".")+1, "	> Author: lnmcc") 
 		call append(line(".")+2, "	> Mail: lnmcc@hotmail.com ") 
-		call append(line(".")+3, "	> Web: lnmcc.net ") 
+		call append(line(".")+3, "	> Blog: lnmcc.net ") 
 		call append(line(".")+4, "	> Created Time: ".strftime("%c")) 
-		call append(line(".")+5, " ************************************************************************/") 
+		call append(line(".")+5, " *********************************************************************** */") 
 		call append(line(".")+6, "")
-=======
-		call append(line(".")+2, "	> Mail: sijiewang@danoonetworks.com ") 
-		call append(line(".")+3, "	> Created Time: ".strftime("%c")) 
-		call append(line(".")+4, " ************************************************************************/") 
-		call append(line(".")+5, "")
->>>>>>> a0a5a3a1a355caa1341b309e64f09b7bc71cc0d6
+
 	endif
 
 	"新建文件后，自动定位到文件末尾
@@ -323,8 +314,6 @@ let Tlist_Exist_OnlyWindow = 1  " 如果只有一个buffer，kill窗口也kill�
 "set tags=tags  
 "set autochdir 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"其他东东
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "默认打开Taglist 
 let Tlist_Auto_Open=0 
 """""""""""""""""""""""""""""" 
@@ -357,9 +346,6 @@ set encoding=utf8
 set fileencodings=utf8,ucs-bom,gbk,cp936,gb2312,gb18030
 
 autocmd FileType python set omnifunc=pythoncomplete#Complete
-
-"set nocompatible               " be iMproved
-"filetype off                   " required!
 
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
